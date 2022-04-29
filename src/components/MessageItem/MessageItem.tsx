@@ -10,6 +10,7 @@ const arrow = require('../../assets/img/arrow.png') as string
 
 type UrlType = {
     url: string
+    type: string
 }
 
 type MessageItemType = {
@@ -57,7 +58,16 @@ const MessageItem: React.FC<MessageItemType> = ({date, author, content, channel,
                         </div>
                         <div className='messageItem__attachments'>
                             <span>Далее</span>
-                            {attachments.map((item) => <img src={item.url} alt="" className='messageItem__attachments__img'/>)}
+                            {attachments.map((item) => 
+                                item.type === "video" ? (
+                                    <video controls className='messageItem__attachments__video'>
+                                        <source src={item.url} type="video/mp4"></source>{" "}
+                                    </video>
+                                ) : (
+                                    <img src={item.url} alt="" className='messageItem__attachments__img'/>)
+                                )}
+                            
+                            
                         </div>
                         
                     </div>

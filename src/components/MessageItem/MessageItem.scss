@@ -27,6 +27,7 @@ span {
     cursor: pointer;
 }
 
+
 .wrapper { 
     width: 886px;
     height: 450px;
@@ -110,6 +111,11 @@ span {
             height: 146px;
             width: 259px;
             margin: 0 auto;
+        }
+        &__video {
+            height: 200px;
+            width: 200px;
+            margin: 0px auto;
         }
     }
 }
