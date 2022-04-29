@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { baseUrl } from "./api/api";
+import MessageItem from "./components/MessageItem/MessageItem";
+import './App.css'
+import { MessagesType } from "./types/types";
 
 function App() {
+  const [messages, setMessages] = useState<MessagesType[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
+
+  useEffect(() => {
+    const data = new FormData()
+    data.append('actionName', 'MessagesLoad')
+    axios.post(baseUrl, data)
+    .then((res) => {
+      setMessages(res.data.Messages)
+      setLoading(false)
+    })
+  }, [])
+  
+  console.log(messages)
+
+  let messagesElements = 
+    messages.map(message => 
+      <MessageItem key={message.id} {...message} loading={loading}/>)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {messagesElements}
     </div>
   );
 }

@@ -1,0 +1,115 @@
+button {
+    width: 78px;
+    height: 32px;
+    border: 1px solid #0088EE;
+    font-size: 13px;
+    line-height: 11px;
+    color: #0088EE;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+
+div {
+    font-weight: 400;
+    font-size: 12px;
+    color: #333333;
+    font-weight: 400;
+}
+
+span {
+    font-size: 12px;
+    line-height: 9.8px;
+    color: #808080;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wrapper { 
+    width: 886px;
+    height: 450px;
+    background: #FFFFFF;
+    border-radius: 1px;
+    margin: 30px auto;
+}
+
+.messageItem {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-left: 14px;
+        top: 10px;
+    }
+    &__time {
+        position: absolute;
+        top: 50px;
+        
+        width: 3%;
+    }
+    &__profile {
+        &__descr {
+            display: flex;
+            flex-direction: column;
+            margin-top: -41px;
+            margin-left: 50px;
+        
+            &__author {
+                font-size: 16px;
+                line-height: 13.3px;
+                font-weight: 400;
+                color: #808080;
+            }
+            &__channel {
+                margin-top: -5px;
+                font-weight: 400;
+                color: #808080;
+            }
+        }
+    }
+    &__nav {
+        display: flex;
+        width: 48%;
+    }
+    &__img {
+        display: flex;
+        position: absolute;
+        margin-top: -36px;
+        margin-left: 750px;
+        grid-gap: 10px;    
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    &__btns {
+        margin-top: -44px;
+        margin-left: 480px;
+        float: right;
+        height: 36px;
+        grid-gap: 10px;   
+        display: flex;
+        align-items: center;
+        position: absolute;
+    }
+    &__descr {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        margin-top: 40px;
+        width: 40%;
+        margin-left: 68px;
+    }
+    &__attachments {
+        margin-left: 68px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 160px;
+        &__img {
+            height: 146px;
+            width: 259px;
+            margin: 0 auto;
+        }
+    }
+}
