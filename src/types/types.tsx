@@ -5,5 +5,4 @@ export type MessagesType = {
     content: string
     date: string
     id: string
-    toggleDisabled: () => void
 }
