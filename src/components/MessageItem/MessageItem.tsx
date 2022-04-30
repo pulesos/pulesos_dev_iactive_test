@@ -21,9 +21,10 @@ type MessageItemType = {
     date: string
     id: string
     loading: boolean
+    toggleDisabled: () => void
 }
 
-const MessageItem: React.FC<MessageItemType> = ({date, author, content, channel, attachments, loading}) => {
+const MessageItem: React.FC<MessageItemType> = ({date, author, content, channel, attachments, loading, toggleDisabled}) => {
     return (
         <>
             {loading ? <Preloader/> :
@@ -49,7 +50,7 @@ const MessageItem: React.FC<MessageItemType> = ({date, author, content, channel,
                             <img src={arrow} alt="arrow"/>
                             <img src={rectangle} alt="rectangle" />
                             <img src={settings} alt="settings" />
-                            <img src={favorite} alt="favorite" />
+                            <button onClick={toggleDisabled}><img src={favorite} alt="favorite" /></button>
                         </div>    
                             
                         
